@@ -6,7 +6,7 @@
 /*   By: arusso <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/06 15:47:45 by arusso            #+#    #+#             */
-/*   Updated: 2018/10/06 15:47:47 by arusso           ###   ########.fr       */
+/*   Updated: 2018/10/06 15:55:05 by arusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,16 @@ int		key_move(int x, int y, t_global *g)
 
 int		zoom(int key, int x, int y, t_global *g)
 {
-	if ((key == 2 || key == 5) && ft_between(0, x, WIDTH) && ft_between(0, y, HEIGHT))
+	if ((key == 2 || key == 5) && ft_between(0, x, WIDTH) \
+			&& ft_between(0, y, HEIGHT))
 	{
 		g->nb_zoom--;
 		g->zoom /= 1.5;
 		g->rv1 -= ((x - g->rv1) / 1.5) - (x - g->rv1);
 		g->rv2 += ((g->rv2 - y) / 1.5) - (g->rv2 - y);
 	}
-	else if ((key == 1 || key == 4) && ft_between(0, x, WIDTH) && ft_between(0, y, HEIGHT))
+	else if ((key == 1 || key == 4) && ft_between(0, x, WIDTH) \
+			&& ft_between(0, y, HEIGHT))
 	{
 		g->nb_zoom++;
 		g->zoom *= 1.5;

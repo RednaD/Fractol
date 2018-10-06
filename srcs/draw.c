@@ -6,7 +6,7 @@
 /*   By: arusso <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 14:44:03 by arusso            #+#    #+#             */
-/*   Updated: 2018/10/06 15:36:57 by arusso           ###   ########.fr       */
+/*   Updated: 2018/10/06 15:54:11 by arusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ static int	get_thread_id(pthread_t id, pthread_t *thread)
 
 static void	*draw_thread(void *g_data)
 {
-	t_global *g;
-	t_local	l;
+	t_global	*g;
+	t_local		l;
 
 	g = (t_global*)g_data;
 	l.padding = WIDTH / THREAD;
