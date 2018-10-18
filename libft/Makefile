@@ -6,7 +6,7 @@
 #    By: arusso <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/13 13:46:59 by arusso            #+#    #+#              #
-#    Updated: 2018/10/06 15:46:10 by arusso           ###   ########.fr        #
+#    Updated: 2018/10/16 15:27:40 by arusso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,17 +87,19 @@ SRC		= ft_memset.c\
 
 OBJ		=	$(SRC:%.c=%.o)
 
+.PHONY : all, clean, fclean, re
+
 all : $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) -c $(SRC) -I libft.h
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@gcc $(FLAGS) -c $(SRC) -I libft.h
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
 clean :
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean : clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re : fclean all

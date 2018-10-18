@@ -6,7 +6,7 @@
 /*   By: arusso <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/01 14:44:03 by arusso            #+#    #+#             */
-/*   Updated: 2018/10/06 15:54:11 by arusso           ###   ########.fr       */
+/*   Updated: 2018/10/06 16:23:39 by arusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void	*draw_thread(void *g_data)
 	t_local		l;
 
 	g = (t_global*)g_data;
-	l.padding = WIDTH / THREAD;
+	l.padding = WIN_SIZE / THREAD;
 	l.x = get_thread_id(pthread_self(), g->thread) * l.padding;
 	l.x_end = l.x + l.padding + 1;
 	while (l.x < g->max_y && l.x < l.x_end)
@@ -89,7 +89,7 @@ static void	*draw_thread(void *g_data)
 				l.val = get_val_mandelia(l.x1, l.y1, g);
 			else
 				l.val = get_val_bur(l.x1, l.y1, g);
-			((int*)g->data)[(int)(l.x + l.y * WIDTH)] = g->color * l.val;
+			((int*)g->data)[(int)(l.x + l.y * WIN_SIZE)] = g->color * l.val;
 			l.y++;
 		}
 		l.x++;

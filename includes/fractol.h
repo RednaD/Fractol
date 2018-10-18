@@ -6,7 +6,7 @@
 /*   By: arusso <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/13 14:32:41 by arusso            #+#    #+#             */
-/*   Updated: 2018/10/06 15:34:09 by arusso           ###   ########.fr       */
+/*   Updated: 2018/10/06 16:28:06 by arusso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 # include <pthread.h>
 # include <math.h>
 
-# define WIDTH 900
-# define HEIGHT 900
+# define WIN_SIZE 900
 # define THREAD 10
 # define JULIA_R 0.0
 # define JULIA_IM 0.0
